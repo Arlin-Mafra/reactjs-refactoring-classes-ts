@@ -1,10 +1,10 @@
-import React, {  useState } from 'react';
+import {  useState } from 'react';
 import { FiEdit3, FiTrash } from 'react-icons/fi';
 
 import { Container } from './styles';
 import api from '../../services/api';
 
-interface FoodType{
+export interface FoodType{
   id: number;
   image: string;
   name: string;
@@ -13,14 +13,14 @@ interface FoodType{
   available: boolean;
 }
 
-interface FoodProps {
+export interface FoodProps {
   food: FoodType;
   handleEditFood: (food: FoodType) => void;
   handleDelete: (id: number) => void;
 }
 
 
- function Food({food,handleDelete,handleEditFood}:FoodProps)  {
+export  function Food({food,handleDelete,handleEditFood}:FoodProps)  {
 
   const { available } = food;
   const [isAvailable,setIsAvailable] = useState(available);
@@ -95,4 +95,3 @@ interface FoodProps {
   }
 
 
-export {Food};
